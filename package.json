@@ -1,0 +1,20 @@
+{
+  "name": "www.brandhof.net",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "ELEVENTY_PRODUCTION=true npx @11ty/eleventy && NODE_ENV=production npx tailwindcss -i src/_includes/css/tailwind.css -c tailwind.config.js -o build/css/style.css --minify",
+    "clean": "rm -rf build",
+    "cms": "npx netlify-cms-proxy-server",
+    "serve": "npx @11ty/eleventy --serve & npx tailwindcss -i src/_includes/css/tailwind.css -c tailwind.config.js -o build/css/style.css --watch"
+  },
+  "engines": {
+    "node": "19"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-img": "^3.0.0",
+    "html-minifier": "^4.0.0",
+    "path": "^0.12.7",
+    "tailwindcss": "^3.2.7"
+  }
+}
